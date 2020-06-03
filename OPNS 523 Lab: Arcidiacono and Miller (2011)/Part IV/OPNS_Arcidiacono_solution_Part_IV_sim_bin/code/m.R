@@ -1,6 +1,6 @@
 source("header.R")
 ############## With 10^6 Observations ##########################################
-set.seed(2020)
+set.seed(2022)
 list(
   theta = c(5, 0.01),
   intercepts =
@@ -30,7 +30,7 @@ suppressMessages(optima(c(10, 2))) %T>% saveRDS("../variables/estimates_big_data
 suppressMessages(optima(c(1000, 1000)))
 
 ############## With 10^3 Observations ##########################################
-set.seed(2020)
+set.seed(2022)
 list(
   theta = c(5, 0.01),
   intercepts =
