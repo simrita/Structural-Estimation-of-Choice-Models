@@ -28,7 +28,7 @@ reduced_CCP <- function(simulated_data) {
     group_by(s) %>%
     mutate(prob.1 = n / sum(n)) %>%
     mutate(prob.0 = 1 - n / sum(n)) %>%
-    mutate(p1 = exp(log(prob.1) - cumsum(lag(log(prob.0), default = 0, order_by = x)))) %>%
+    mutate(p1 = exp(log(prob.1) - log(1-cumsum(lag((prob.1), default = 0, order_by = x))))) %>%
     ungroup() %>%
     select(s, x, p1) %>%
     rename(prob = p1)
