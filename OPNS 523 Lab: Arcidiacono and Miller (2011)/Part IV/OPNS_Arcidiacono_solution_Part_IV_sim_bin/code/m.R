@@ -14,18 +14,18 @@ list(
   saveRDS("../variables/sim_data.rds")
 
 simulated_data <- readRDS("../variables/sim_data.rds")
-CCP_estimates <- simulated_data %>%
-  reduced_CCP() %>%
-  arrange(s, x)
-CCP_estimates
-Values <- CCP_estimates %>%
-  filter(a == 1) %>%
-  group_by(s) %>%
-  arrange(x) %>%
-  mutate(V = log(prob[1]) - log(prob)) %>%
-  ungroup() %>%
-  select(-a, -prob)
-Values
+# CCP_estimates <- simulated_data %>%
+#   reduced_CCP() %>%
+#   arrange(s, x)
+# CCP_estimates
+# Values <- CCP_estimates %>%
+#   filter(a == 1) %>%
+#   group_by(s) %>%
+#   arrange(x) %>%
+#   mutate(V = log(prob[1]) - log(prob)) %>%
+#   ungroup() %>%
+#   select(-a, -prob)
+# Values
 suppressMessages(optima(c(10, 2))) %T>% saveRDS("../variables/estimates_big_data.rds")
 suppressMessages(optima(c(1000, 1000)))
 
@@ -44,17 +44,17 @@ list(
   saveRDS("../variables/sim_data.rds")
 
 simulated_data <- readRDS("../variables/sim_data.rds")
-CCP_estimates <- simulated_data %>%
-  reduced_CCP() %>%
-  arrange(s, x)
-CCP_estimates
-Values <- CCP_estimates %>%
-  filter(a == 1) %>%
-  group_by(s) %>%
-  arrange(x) %>%
-  mutate(V = log(prob[1]) - log(prob)) %>%
-  ungroup() %>%
-  select(-a, -prob)
-Values
+# CCP_estimates <- simulated_data %>%
+#   reduced_CCP() %>%
+#   arrange(s, x)
+# CCP_estimates
+# Values <- CCP_estimates %>%
+#   filter(a == 1) %>%
+#   group_by(s) %>%
+#   arrange(x) %>%
+#   mutate(V = log(prob[1]) - log(prob)) %>%
+#   ungroup() %>%
+#   select(-a, -prob)
+# Values
 suppressMessages(optima(c(10, 2))) %T>% saveRDS("../variables/estimates_small_data.rds")
 suppressMessages(optima(c(1000, 1000)))
